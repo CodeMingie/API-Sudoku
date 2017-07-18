@@ -1,0 +1,8 @@
+D:\Dekstop\API-Sudoku-master\Sudoku2\Sudoku2\bin\Debug\Sudoku2.exe.config
+D:\Dekstop\API-Sudoku-master\Sudoku2\Sudoku2\bin\Debug\Sudoku2.exe
+D:\Dekstop\API-Sudoku-master\Sudoku2\Sudoku2\bin\Debug\Sudoku2.pdb
+D:\Dekstop\API-Sudoku-master\Sudoku2\Sudoku2\obj\Debug\Sudoku2.Form1.resources
+D:\Dekstop\API-Sudoku-master\Sudoku2\Sudoku2\obj\Debug\Sudoku2.Properties.Resources.resources
+D:\Dekstop\API-Sudoku-master\Sudoku2\Sudoku2\obj\Debug\Sudoku2.csproj.GenerateResource.Cache
+D:\Dekstop\API-Sudoku-master\Sudoku2\Sudoku2\obj\Debug\Sudoku2.exe
+D:\Dekstop\API-Sudoku-master\Sudoku2\Sudoku2\obj\Debug\Sudoku2.pdb
