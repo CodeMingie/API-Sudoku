@@ -16,6 +16,7 @@ namespace Sudoku2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+<<<<<<< HEAD
             Sudoku s = new Sudoku();
             s.InstantiateMatrix();
             s.PopulateMatrix();
@@ -26,6 +27,9 @@ namespace Sudoku2
 
             //Application.Run(new Form1());
 
+=======
+            Application.Run(new Form1());
+>>>>>>> 962319d64dab536877b21f8bf793bec2103e9d3b
         }
     }
 }
