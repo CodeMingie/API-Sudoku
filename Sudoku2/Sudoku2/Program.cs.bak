@@ -16,14 +16,20 @@ namespace Sudoku2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+<<<<<<< HEAD
             Sudoku s = new Sudoku();
-            s.PopulateNumMap();
+            s.InstantiateMatrix();
+            s.PopulateMatrix();
             s.Solve();
+            Console.Out.Write(s.PrintMatrix());
 
             int pause = 1;
 
             //Application.Run(new Form1());
 
+=======
+            Application.Run(new Form1());
+>>>>>>> 962319d64dab536877b21f8bf793bec2103e9d3b
         }
     }
 }

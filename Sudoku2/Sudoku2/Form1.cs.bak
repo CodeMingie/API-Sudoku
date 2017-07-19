@@ -63,9 +63,15 @@ namespace Sudoku2
 
         public void PopulateMatrix()
         {
+<<<<<<< HEAD
             AddValueMatrix(matrix, 0, 0, 8);
             AddValueMatrix(matrix, 0, 1, 4);
             AddValueMatrix(matrix, 0, 2, 3);
+=======
+            AddValueMatrix(matrix, 1, 1, 2);
+            AddValueMatrix(matrix, 2, 2, 4);
+            AddValueMatrix(matrix, 3, 3, 6);
+>>>>>>> 962319d64dab536877b21f8bf793bec2103e9d3b
         }
 
         public void AddValueMatrix(int[,] matrix, int x, int y, int value)

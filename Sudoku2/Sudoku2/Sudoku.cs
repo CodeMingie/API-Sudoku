@@ -8,79 +8,79 @@ namespace Sudoku2
 {
     class Sudoku
     {
-        private int?[,] matrix = new int?[9, 9];
+        private int?[,] numberMap = new int?[9, 9];
 
-        public string PrintCell(int? number)
+        public string PrintNum(int? number)
         {
             if (!number.HasValue)
                 return "[ ]";
             return "[" + number.ToString() + "]";
         }
 
-        public string PrintMatrix()
+        public string PrintNumMap()
         {
             string returnString = string.Empty;
 
-            returnString = PrintCell(matrix[0, 0]) + " " + PrintCell(matrix[1, 0]) + " " + PrintCell(matrix[2, 0]) + "|" + PrintCell(matrix[3, 0]) + " " + PrintCell(matrix[4, 0]) + " " + PrintCell(matrix[5, 0]) + "|" + PrintCell(matrix[6, 0]) + " " + PrintCell(matrix[7, 0]) + " " + PrintCell(matrix[8, 0]) + Environment.NewLine;
-            returnString += PrintCell(matrix[0, 1]) + " " + PrintCell(matrix[1, 1]) + " " + PrintCell(matrix[2, 1]) + "|" + PrintCell(matrix[3, 1]) + " " + PrintCell(matrix[4, 1]) + " " + PrintCell(matrix[5, 1]) + "|" + PrintCell(matrix[6, 1]) + " " + PrintCell(matrix[7, 1]) + " " + PrintCell(matrix[8, 1]) + Environment.NewLine;
-            returnString += PrintCell(matrix[0, 2]) + " " + PrintCell(matrix[1, 2]) + " " + PrintCell(matrix[2, 2]) + "|" + PrintCell(matrix[3, 2]) + " " + PrintCell(matrix[4, 2]) + " " + PrintCell(matrix[5, 2]) + "|" + PrintCell(matrix[6, 2]) + " " + PrintCell(matrix[7, 2]) + " " + PrintCell(matrix[8, 2]) + Environment.NewLine;
+            returnString = PrintNum(numberMap[0, 0]) + " " + PrintNum(numberMap[1, 0]) + " " + PrintNum(numberMap[2, 0]) + "|" + PrintNum(numberMap[3, 0]) + " " + PrintNum(numberMap[4, 0]) + " " + PrintNum(numberMap[5, 0]) + "|" + PrintNum(numberMap[6, 0]) + " " + PrintNum(numberMap[7, 0]) + " " + PrintNum(numberMap[8, 0]) + Environment.NewLine;
+            returnString += PrintNum(numberMap[0, 1]) + " " + PrintNum(numberMap[1, 1]) + " " + PrintNum(numberMap[2, 1]) + "|" + PrintNum(numberMap[3, 1]) + " " + PrintNum(numberMap[4, 1]) + " " + PrintNum(numberMap[5, 1]) + "|" + PrintNum(numberMap[6, 1]) + " " + PrintNum(numberMap[7, 1]) + " " + PrintNum(numberMap[8, 1]) + Environment.NewLine;
+            returnString += PrintNum(numberMap[0, 2]) + " " + PrintNum(numberMap[1, 2]) + " " + PrintNum(numberMap[2, 2]) + "|" + PrintNum(numberMap[3, 2]) + " " + PrintNum(numberMap[4, 2]) + " " + PrintNum(numberMap[5, 2]) + "|" + PrintNum(numberMap[6, 2]) + " " + PrintNum(numberMap[7, 2]) + " " + PrintNum(numberMap[8, 2]) + Environment.NewLine;
             returnString += "-------------------------------------" + Environment.NewLine;
-            returnString += PrintCell(matrix[0, 3]) + " " + PrintCell(matrix[1, 3]) + " " + PrintCell(matrix[2, 3]) + "|" + PrintCell(matrix[3, 3]) + " " + PrintCell(matrix[4, 3]) + " " + PrintCell(matrix[5, 3]) + "|" + PrintCell(matrix[6, 3]) + " " + PrintCell(matrix[7, 3]) + " " + PrintCell(matrix[8, 3]) + Environment.NewLine;
-            returnString += PrintCell(matrix[0, 4]) + " " + PrintCell(matrix[1, 4]) + " " + PrintCell(matrix[2, 4]) + "|" + PrintCell(matrix[3, 4]) + " " + PrintCell(matrix[4, 4]) + " " + PrintCell(matrix[5, 4]) + "|" + PrintCell(matrix[6, 4]) + " " + PrintCell(matrix[7, 4]) + " " + PrintCell(matrix[8, 4]) + Environment.NewLine;
-            returnString += PrintCell(matrix[0, 5]) + " " + PrintCell(matrix[1, 5]) + " " + PrintCell(matrix[2, 5]) + "|" + PrintCell(matrix[3, 5]) + " " + PrintCell(matrix[4, 5]) + " " + PrintCell(matrix[5, 5]) + "|" + PrintCell(matrix[6, 5]) + " " + PrintCell(matrix[7, 5]) + " " + PrintCell(matrix[8, 5]) + Environment.NewLine;
+            returnString += PrintNum(numberMap[0, 3]) + " " + PrintNum(numberMap[1, 3]) + " " + PrintNum(numberMap[2, 3]) + "|" + PrintNum(numberMap[3, 3]) + " " + PrintNum(numberMap[4, 3]) + " " + PrintNum(numberMap[5, 3]) + "|" + PrintNum(numberMap[6, 3]) + " " + PrintNum(numberMap[7, 3]) + " " + PrintNum(numberMap[8, 3]) + Environment.NewLine;
+            returnString += PrintNum(numberMap[0, 4]) + " " + PrintNum(numberMap[1, 4]) + " " + PrintNum(numberMap[2, 4]) + "|" + PrintNum(numberMap[3, 4]) + " " + PrintNum(numberMap[4, 4]) + " " + PrintNum(numberMap[5, 4]) + "|" + PrintNum(numberMap[6, 4]) + " " + PrintNum(numberMap[7, 4]) + " " + PrintNum(numberMap[8, 4]) + Environment.NewLine;
+            returnString += PrintNum(numberMap[0, 5]) + " " + PrintNum(numberMap[1, 5]) + " " + PrintNum(numberMap[2, 5]) + "|" + PrintNum(numberMap[3, 5]) + " " + PrintNum(numberMap[4, 5]) + " " + PrintNum(numberMap[5, 5]) + "|" + PrintNum(numberMap[6, 5]) + " " + PrintNum(numberMap[7, 5]) + " " + PrintNum(numberMap[8, 5]) + Environment.NewLine;
             returnString += "-----------------------------------" + Environment.NewLine;
-            returnString += PrintCell(matrix[0, 6]) + " " + PrintCell(matrix[1, 6]) + " " + PrintCell(matrix[2, 6]) + "|" + PrintCell(matrix[3, 6]) + " " + PrintCell(matrix[4, 6]) + " " + PrintCell(matrix[5, 6]) + "|" + PrintCell(matrix[6, 6]) + " " + PrintCell(matrix[7, 6]) + " " + PrintCell(matrix[8, 6]) + Environment.NewLine;
-            returnString += PrintCell(matrix[0, 7]) + " " + PrintCell(matrix[1, 7]) + " " + PrintCell(matrix[2, 7]) + "|" + PrintCell(matrix[3, 7]) + " " + PrintCell(matrix[4, 7]) + " " + PrintCell(matrix[5, 7]) + "|" + PrintCell(matrix[6, 7]) + " " + PrintCell(matrix[7, 7]) + " " + PrintCell(matrix[8, 7]) + Environment.NewLine;
-            returnString += PrintCell(matrix[0, 8]) + " " + PrintCell(matrix[1, 8]) + " " + PrintCell(matrix[2, 8]) + "|" + PrintCell(matrix[3, 8]) + " " + PrintCell(matrix[4, 8]) + " " + PrintCell(matrix[5, 8]) + "|" + PrintCell(matrix[6, 8]) + " " + PrintCell(matrix[7, 8]) + " " + PrintCell(matrix[8, 8]) + Environment.NewLine;
+            returnString += PrintNum(numberMap[0, 6]) + " " + PrintNum(numberMap[1, 6]) + " " + PrintNum(numberMap[2, 6]) + "|" + PrintNum(numberMap[3, 6]) + " " + PrintNum(numberMap[4, 6]) + " " + PrintNum(numberMap[5, 6]) + "|" + PrintNum(numberMap[6, 6]) + " " + PrintNum(numberMap[7, 6]) + " " + PrintNum(numberMap[8, 6]) + Environment.NewLine;
+            returnString += PrintNum(numberMap[0, 7]) + " " + PrintNum(numberMap[1, 7]) + " " + PrintNum(numberMap[2, 7]) + "|" + PrintNum(numberMap[3, 7]) + " " + PrintNum(numberMap[4, 7]) + " " + PrintNum(numberMap[5, 7]) + "|" + PrintNum(numberMap[6, 7]) + " " + PrintNum(numberMap[7, 7]) + " " + PrintNum(numberMap[8, 7]) + Environment.NewLine;
+            returnString += PrintNum(numberMap[0, 8]) + " " + PrintNum(numberMap[1, 8]) + " " + PrintNum(numberMap[2, 8]) + "|" + PrintNum(numberMap[3, 8]) + " " + PrintNum(numberMap[4, 8]) + " " + PrintNum(numberMap[5, 8]) + "|" + PrintNum(numberMap[6, 8]) + " " + PrintNum(numberMap[7, 8]) + " " + PrintNum(numberMap[8, 8]) + Environment.NewLine;
 
             return returnString;
         }
 
-        public void PopulateMatrix()
+        public void PopulateNumMap()
         {
-            AddValueMatrix(0, 0, 8);
-            AddValueMatrix(0, 1, 4);
-            AddValueMatrix(0, 2, 3);
-            AddValueMatrix(0, 3, 9);
-            AddValueMatrix(0, 4, 7);
-            AddValueMatrix(0, 6, 2);
-            AddValueMatrix(0, 7, 1);
+            SetNum(0, 0, 8);
+            SetNum(0, 1, 4);
+            SetNum(0, 2, 3);
+            SetNum(0, 3, 9);
+            SetNum(0, 4, 7);
+            SetNum(0, 6, 2);
+            SetNum(0, 7, 1);
 
-            AddValueMatrix(1, 2, 6);
-            AddValueMatrix(1, 4, 1);
+            SetNum(1, 2, 6);
+            SetNum(1, 4, 1);
 
-            AddValueMatrix(2, 0, 1);
-            AddValueMatrix(2, 2, 5);
-            AddValueMatrix(2, 5, 4);
-            AddValueMatrix(2, 7, 7);
+            SetNum(2, 0, 1);
+            SetNum(2, 2, 5);
+            SetNum(2, 5, 4);
+            SetNum(2, 7, 7);
 
-            AddValueMatrix(3, 1, 5);
-            AddValueMatrix(3, 3, 6);
+            SetNum(3, 1, 5);
+            SetNum(3, 3, 6);
 
-            AddValueMatrix(4, 0, 9);
-            AddValueMatrix(4, 2, 1);
-            AddValueMatrix(4, 4, 5);
-            AddValueMatrix(4, 6, 3);
-            AddValueMatrix(4, 8, 7);
+            SetNum(4, 0, 9);
+            SetNum(4, 2, 1);
+            SetNum(4, 4, 5);
+            SetNum(4, 6, 3);
+            SetNum(4, 8, 7);
 
-            AddValueMatrix(5, 5, 7);
-            AddValueMatrix(5, 7, 8);
+            SetNum(5, 5, 7);
+            SetNum(5, 7, 8);
 
-            AddValueMatrix(6, 1, 7);
-            AddValueMatrix(6, 3, 5);
-            AddValueMatrix(6, 6, 9);
-            AddValueMatrix(6, 8, 4);
+            SetNum(6, 1, 7);
+            SetNum(6, 3, 5);
+            SetNum(6, 6, 9);
+            SetNum(6, 8, 4);
 
-            AddValueMatrix(7, 4, 4);
-            AddValueMatrix(7, 6, 8);
+            SetNum(7, 4, 4);
+            SetNum(7, 6, 8);
 
-            AddValueMatrix(8, 1, 3);
-            AddValueMatrix(8, 2, 4);
-            AddValueMatrix(8, 4, 6);
-            AddValueMatrix(8, 5, 9);
-            AddValueMatrix(8, 6, 7);
-            AddValueMatrix(8, 7, 2);
-            AddValueMatrix(8, 8, 1);
+            SetNum(8, 1, 3);
+            SetNum(8, 2, 4);
+            SetNum(8, 4, 6);
+            SetNum(8, 5, 9);
+            SetNum(8, 6, 7);
+            SetNum(8, 7, 2);
+            SetNum(8, 8, 1);
         }
 
         public bool IsSolved()
@@ -89,7 +89,7 @@ namespace Sudoku2
             {
                 for (int y = 0; y < 9; y++)
                 {
-                    if (!matrix[x, y].HasValue)
+                    if (!numberMap[x, y].HasValue)
                     {
                         return false;
                     }
@@ -101,32 +101,99 @@ namespace Sudoku2
 
         public void Solve()
         {
-            List<Tuple<int, int>> l = SolveNum(7);
 
+            while (!this.IsSolved())
+            {
+                for (int x = 1; x < 10; x++)
+                {
+                    List<Tuple<int, int>> l = SolveNum(x);
+
+                    foreach (Tuple<int, int> t in l)
+                    {
+                        this.numberMap[t.Item1, t.Item2] = x;
+                    }
+                }
+
+                Console.Out.WriteLine(this.PrintNumMap());
+            }
         }
 
         public List<Tuple<int, int>> SolveNum(int num)
         {
-            List<Tuple<int, int>> solveNums = new List<Tuple<int, int>>();
+            //Initialize possibility table
+            List<Tuple<int, int>> solvedNums = new List<Tuple<int, int>>();
 
-            bool[,] map = new bool[9, 9];
+            bool[,] boolMap = new bool[9, 9];
 
             for (int x = 0; x < 9; x++)
             {
                 for (int y = 0; y < 9; y++)
                 {
-                    map[x, y] = true;
+                    boolMap[x, y] = true;
                 }
             }
 
-            PrintMap(map);
+            //X out rows,columns and region blocks containing number
+            for (int x = 0; x < 9; x++)
+            {
+                for (int y = 0; y < 9; y++)
+                {
+                    if (this.numberMap[x,y].HasValue && this.numberMap[x, y].Value == num)
+                    {
+                        for (int i = 0; i < 9; i++)
+                        {    
+                            boolMap[i, y] = false;
+                            boolMap[x, i] = false;
+                        }
+                        
+                        for (int a = x / 3 * 3; a < x / 3 * 3+ 3; a++)
+                        {
+                            for (int b = y / 3 * 3; b < y / 3 * 3+ 3; b++)
+                            {
+                                //Console.Out.WriteLine(a.ToString() + " " + b.ToString());
+                                boolMap[a, b] = false;
+                            }
+                        }
+                        
+                    }
+                    else if (this.numberMap[x, y].HasValue)
+                    {
+                        boolMap[x, y] = false;
+                    }
+                }
+            }
 
+            //If only one possibility remains in region block, that must be the num. 
+            //So add it to solved list
+            for (int x = 0; x < 3; x++)
+            {
+                for (int y = 0; y < 3; y++)
+                {
+                    int possNumCount = 0;
+                    Tuple<int, int> possNum = new Tuple<int, int>(-1, -1);
 
+                    for (int i = x * 3; i < x * 3 + 3; i++)
+                    {
+                        for (int j = y * 3; j < y* 3 + 3; j++)
+                        {
+                            if (boolMap[i, j] == true)
+                            {
+                                possNumCount++;
+                                possNum = new Tuple<int, int>(i, j);
+                            }
+                        }
+                    }
 
-            return solveNums;
+                    if (possNumCount == 1)
+                        solvedNums.Add(possNum);
+                }
+            }
+            //PrintBoolMap(boolMap);
+            
+            return solvedNums;
         }
 
-        public void PrintMap(bool[,] map)
+        public void PrintBoolMap(bool[,] map)
         {
             string returnString = string.Empty;
 
@@ -153,9 +220,9 @@ namespace Sudoku2
         }
 
 
-        public void AddValueMatrix(int x, int y, int value)
+        public void SetNum(int x, int y, int value)
         {
-            this.matrix[x, y] = value;
+            this.numberMap[x, y] = value;
         }
 
     }
