@@ -17,6 +17,7 @@ namespace Sudoku2
             return "[" + number.ToString() + "]";
         }
 
+        //Output numbers map to console
         public string PrintNumMap()
         {
             string returnString = string.Empty;
@@ -138,23 +139,23 @@ namespace Sudoku2
             {
                 for (int y = 0; y < 9; y++)
                 {
-                    if (this.numberMap[x,y].HasValue && this.numberMap[x, y].Value == num)
+                    if (this.numberMap[x, y].HasValue && this.numberMap[x, y].Value == num)
                     {
                         for (int i = 0; i < 9; i++)
-                        {    
+                        {
                             boolMap[i, y] = false;
                             boolMap[x, i] = false;
                         }
-                        
-                        for (int a = x / 3 * 3; a < x / 3 * 3+ 3; a++)
+
+                        for (int a = x / 3 * 3; a < x / 3 * 3 + 3; a++)
                         {
-                            for (int b = y / 3 * 3; b < y / 3 * 3+ 3; b++)
+                            for (int b = y / 3 * 3; b < y / 3 * 3 + 3; b++)
                             {
                                 //Console.Out.WriteLine(a.ToString() + " " + b.ToString());
                                 boolMap[a, b] = false;
                             }
                         }
-                        
+
                     }
                     else if (this.numberMap[x, y].HasValue)
                     {
@@ -174,7 +175,7 @@ namespace Sudoku2
 
                     for (int i = x * 3; i < x * 3 + 3; i++)
                     {
-                        for (int j = y * 3; j < y* 3 + 3; j++)
+                        for (int j = y * 3; j < y * 3 + 3; j++)
                         {
                             if (boolMap[i, j] == true)
                             {
@@ -189,7 +190,7 @@ namespace Sudoku2
                 }
             }
             //PrintBoolMap(boolMap);
-            
+
             return solvedNums;
         }
 
@@ -223,6 +224,11 @@ namespace Sudoku2
         public void SetNum(int x, int y, int value)
         {
             this.numberMap[x, y] = value;
+        }
+
+        public int? GetNum(int x, int y)
+        {
+            return this.numberMap[x, y];
         }
 
     }
